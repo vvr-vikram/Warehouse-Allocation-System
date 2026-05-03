@@ -1,0 +1,2057 @@
+2026-05-03 07:37:15 [main] INFO  c.w.a.WarehouseAllocationApplication - Starting WarehouseAllocationApplication using Java 17.0.12 with PID 9780 (C:\Users\vikra.VIGNESHXBS-HP\eclipse-workspace\warehouse-allocation\target\classes started by vikra in C:\Users\vikra.VIGNESHXBS-HP\eclipse-workspace\warehouse-allocation)
+2026-05-03 07:37:16 [main] DEBUG c.w.a.WarehouseAllocationApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-05-03 07:37:16 [main] INFO  c.w.a.WarehouseAllocationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-03 07:37:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-03 07:37:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 114 ms. Found 6 JPA repository interfaces.
+2026-05-03 07:37:20 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-03 07:37:20 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-03 07:37:20 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-05-03 07:37:21 [main] INFO  o.a.c.c.C.[.[localhost].[/api/v1] - Initializing Spring embedded WebApplicationContext
+2026-05-03 07:37:21 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4243 ms
+2026-05-03 07:37:21 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-03 07:37:21 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-05-03 07:37:21 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-05-03 07:37:22 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-03 07:37:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-03 07:37:22 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c678c7b
+2026-05-03 07:37:22 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-03 07:37:22 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-03 07:37:24 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-03 07:37:24 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-03 07:37:25 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-03 07:37:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api/v1'
+2026-05-03 07:37:27 [main] INFO  c.w.a.WarehouseAllocationApplication - Started WarehouseAllocationApplication in 12.918 seconds (process running for 13.726)
+2026-05-03 07:51:58 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api/v1] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-03 07:51:58 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-03 07:51:58 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2026-05-03 07:51:58 [http-nio-8080-exec-1] ERROR c.w.a.c.GlobalExceptionHandler - Unexpected exception occurred
+org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.warehouse.allocation.dto.ResponseWrapper<com.warehouse.allocation.dto.WarehouseResponse>> com.warehouse.allocation.controller.WarehouseController.createWarehouse(com.warehouse.allocation.dto.CreateWarehouseRequest)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:162)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:134)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:218)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:171)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-05-03 07:52:12 [http-nio-8080-exec-4] INFO  c.w.a.controller.WarehouseController - Fetching all active warehouses
+2026-05-03 07:52:12 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.status=? 
+        and not(w1_0.is_deleted)
+2026-05-03 07:55:49 [http-nio-8080-exec-7] INFO  c.w.a.controller.WarehouseController - Fetching warehouse with ID: 4
+2026-05-03 07:55:49 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 07:58:06 [http-nio-8080-exec-10] INFO  c.w.a.controller.WarehouseController - Fetching warehouses with pagination: page=0, size=2
+2026-05-03 07:58:06 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        not(w1_0.is_deleted) 
+    order by
+        w1_0.created_at desc 
+    limit
+        ?, ?
+2026-05-03 07:58:06 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        count(w1_0.id) 
+    from
+        warehouse w1_0 
+    where
+        not(w1_0.is_deleted)
+2026-05-03 08:01:45 [http-nio-8080-exec-3] INFO  c.w.a.controller.WarehouseController - Updating warehouse with ID: 1
+2026-05-03 08:01:45 [http-nio-8080-exec-3] INFO  c.w.a.service.WarehouseService - Updating warehouse with ID: 1
+2026-05-03 08:01:45 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:01:45 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.name=? 
+        and not(w1_0.is_deleted)
+2026-05-03 08:01:45 [http-nio-8080-exec-3] INFO  c.w.a.service.WarehouseService - Warehouse updated successfully with ID: 1
+2026-05-03 08:01:45 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.warehouse.allocation.entity.AuditLog */insert 
+    into
+        audit_log (action, created_at, description, entity_id, entity_type, ip_address, new_values, old_values, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-03 08:01:45 [http-nio-8080-exec-3] DEBUG c.w.allocation.service.AuditService - Audit log created for entity Warehouse with action UPDATE
+2026-05-03 08:01:45 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    /* update
+        for com.warehouse.allocation.entity.Warehouse */update warehouse 
+    set
+        capacity=?,
+        is_deleted=?,
+        location=?,
+        name=?,
+        status=?,
+        updated_at=? 
+    where
+        id=?
+2026-05-03 08:04:31 [http-nio-8080-exec-6] INFO  c.w.a.controller.WarehouseController - Deactivating warehouse with ID: 1
+2026-05-03 08:04:31 [http-nio-8080-exec-6] INFO  c.w.a.service.WarehouseService - Deactivating warehouse with ID: 1
+2026-05-03 08:04:31 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:04:31 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.warehouse.allocation.entity.AuditLog */insert 
+    into
+        audit_log (action, created_at, description, entity_id, entity_type, ip_address, new_values, old_values, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-03 08:04:31 [http-nio-8080-exec-6] DEBUG c.w.allocation.service.AuditService - Audit log created for entity Warehouse with action UPDATE
+2026-05-03 08:04:31 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    /* update
+        for com.warehouse.allocation.entity.Warehouse */update warehouse 
+    set
+        capacity=?,
+        is_deleted=?,
+        location=?,
+        name=?,
+        status=?,
+        updated_at=? 
+    where
+        id=?
+2026-05-03 08:05:29 [http-nio-8080-exec-7] INFO  c.w.a.controller.WarehouseController - Deleting warehouse with ID: 1
+2026-05-03 08:05:29 [http-nio-8080-exec-7] INFO  c.w.a.service.WarehouseService - Soft deleting warehouse with ID: 1
+2026-05-03 08:05:29 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:05:29 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.warehouse.allocation.entity.AuditLog */insert 
+    into
+        audit_log (action, created_at, description, entity_id, entity_type, ip_address, new_values, old_values, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-03 08:05:29 [http-nio-8080-exec-7] DEBUG c.w.allocation.service.AuditService - Audit log created for entity Warehouse with action DELETE
+2026-05-03 08:05:29 [http-nio-8080-exec-7] INFO  c.w.a.service.WarehouseService - Warehouse 1 soft deleted successfully
+2026-05-03 08:05:29 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    /* update
+        for com.warehouse.allocation.entity.Warehouse */update warehouse 
+    set
+        capacity=?,
+        is_deleted=?,
+        location=?,
+        name=?,
+        status=?,
+        updated_at=? 
+    where
+        id=?
+2026-05-03 08:07:03 [http-nio-8080-exec-10] INFO  c.w.a.controller.ProductController - Fetching all products
+2026-05-03 08:07:03 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0
+2026-05-03 08:08:56 [http-nio-8080-exec-3] INFO  c.w.a.controller.ProductController - Fetching product with ID: 1
+2026-05-03 08:08:56 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:10:08 [http-nio-8080-exec-5] INFO  c.w.a.controller.ProductController - Fetching product with SKU: LAPTOP-001
+2026-05-03 08:10:08 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.sku=?
+2026-05-03 08:11:10 [http-nio-8080-exec-9] INFO  c.w.a.controller.ProductController - Searching products with name: keyboard
+2026-05-03 08:11:10 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        upper(p1_0.name) like upper(?) escape '\\'
+2026-05-03 08:12:27 [http-nio-8080-exec-1] INFO  c.w.a.controller.InventoryController - Fetching inventory for warehouse 2 and product 3
+2026-05-03 08:12:27 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        wi1_0.id,
+        wi1_0.available_quantity,
+        wi1_0.created_at,
+        wi1_0.product_id,
+        wi1_0.updated_at,
+        wi1_0.version,
+        wi1_0.warehouse_id 
+    from
+        warehouse_inventory wi1_0 
+    where
+        wi1_0.warehouse_id=? 
+        and wi1_0.product_id=?
+2026-05-03 08:12:27 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:12:27 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:13:20 [http-nio-8080-exec-3] INFO  c.w.a.controller.InventoryController - Fetching inventory for warehouse: 3
+2026-05-03 08:13:20 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:13:20 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        wi1_0.id,
+        wi1_0.available_quantity,
+        wi1_0.created_at,
+        wi1_0.product_id,
+        wi1_0.updated_at,
+        wi1_0.version,
+        wi1_0.warehouse_id 
+    from
+        warehouse_inventory wi1_0 
+    where
+        wi1_0.warehouse_id=?
+2026-05-03 08:13:20 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:13:20 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:13:20 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:13:20 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:14:22 [http-nio-8080-exec-5] INFO  c.w.a.controller.InventoryController - Fetching inventory for product: 1
+2026-05-03 08:14:22 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:14:22 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        wi1_0.id,
+        wi1_0.available_quantity,
+        wi1_0.created_at,
+        wi1_0.product_id,
+        wi1_0.updated_at,
+        wi1_0.version,
+        wi1_0.warehouse_id 
+    from
+        warehouse_inventory wi1_0 
+    where
+        wi1_0.product_id=?
+2026-05-03 08:14:22 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:14:22 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:14:22 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:14:22 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:15:18 [http-nio-8080-exec-7] INFO  c.w.a.controller.InventoryController - Fetching total available stock for product: 2
+2026-05-03 08:15:18 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:15:18 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        SUM(wi.availableQuantity) 
+    FROM
+        WarehouseInventory wi 
+    WHERE
+        wi.product.id = :productId */ select
+            sum(wi1_0.available_quantity) 
+        from
+            warehouse_inventory wi1_0 
+        where
+            wi1_0.product_id=?
+2026-05-03 08:17:23 [http-nio-8080-exec-9] ERROR c.w.a.c.GlobalExceptionHandler - Unexpected exception occurred
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:265)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:441)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:382)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:126)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:507)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1283)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1065)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-05-03 08:17:39 [http-nio-8080-exec-1] INFO  c.w.a.c.AllocationController - Allocating stock: productId=1, quantity=50, warehouseId=1
+2026-05-03 08:17:39 [http-nio-8080-exec-1] INFO  c.w.a.service.AllocationService - Allocating 50 units of product 1 from warehouse 1
+2026-05-03 08:17:39 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:17:39 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:17:39 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        wi1_0.id,
+        wi1_0.available_quantity,
+        wi1_0.created_at,
+        wi1_0.product_id,
+        wi1_0.updated_at,
+        wi1_0.version,
+        wi1_0.warehouse_id 
+    from
+        warehouse_inventory wi1_0 
+    where
+        wi1_0.warehouse_id=? 
+        and wi1_0.product_id=?
+2026-05-03 08:17:39 [http-nio-8080-exec-1] WARN  c.w.a.service.AllocationService - Insufficient stock: Available=0, Requested=50
+2026-05-03 08:17:39 [http-nio-8080-exec-1] ERROR c.w.a.c.GlobalExceptionHandler - Allocation exception occurred: Insufficient stock. Available: 0, Requested: 50
+com.warehouse.allocation.exception.AllocationException$InsufficientStockException: Insufficient stock. Available: 0, Requested: 50
+	at com.warehouse.allocation.service.AllocationService.allocateFromWarehouse(AllocationService.java:90)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.warehouse.allocation.service.AllocationService$$SpringCGLIB$$0.allocateFromWarehouse(<generated>)
+	at com.warehouse.allocation.controller.AllocationController.allocateStock(AllocationController.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.warehouse.allocation.controller.AllocationController$$SpringCGLIB$$0.allocateStock(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-05-03 08:17:53 [http-nio-8080-exec-4] INFO  c.w.a.c.AllocationController - Allocating stock: productId=1, quantity=50, warehouseId=2
+2026-05-03 08:17:53 [http-nio-8080-exec-4] INFO  c.w.a.service.AllocationService - Allocating 50 units of product 1 from warehouse 2
+2026-05-03 08:17:53 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:17:53 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:17:53 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        wi1_0.id,
+        wi1_0.available_quantity,
+        wi1_0.created_at,
+        wi1_0.product_id,
+        wi1_0.updated_at,
+        wi1_0.version,
+        wi1_0.warehouse_id 
+    from
+        warehouse_inventory wi1_0 
+    where
+        wi1_0.warehouse_id=? 
+        and wi1_0.product_id=?
+2026-05-03 08:17:53 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.warehouse.allocation.entity.Allocation */insert 
+    into
+        allocation (allocated_at, completed_at, confirmed_at, created_at, notes, product_id, quantity, reference_id, status, updated_at, warehouse_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-03 08:17:53 [http-nio-8080-exec-4] INFO  c.w.a.service.AllocationService - Allocation successful with reference ID: ALLOC-1777776473207-92839708
+2026-05-03 08:17:53 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.warehouse.allocation.entity.AuditLog */insert 
+    into
+        audit_log (action, created_at, description, entity_id, entity_type, ip_address, new_values, old_values, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-03 08:17:53 [http-nio-8080-exec-4] DEBUG c.w.allocation.service.AuditService - Audit log created for entity Allocation with action ALLOCATE
+2026-05-03 08:17:53 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    /* update
+        for com.warehouse.allocation.entity.WarehouseInventory */update warehouse_inventory 
+    set
+        available_quantity=?,
+        product_id=?,
+        updated_at=?,
+        version=?,
+        warehouse_id=? 
+    where
+        id=? 
+        and version=?
+2026-05-03 08:19:04 [http-nio-8080-exec-7] ERROR c.w.a.c.GlobalExceptionHandler - Unexpected exception occurred
+org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.warehouse.allocation.dto.ResponseWrapper<com.warehouse.allocation.dto.AllocationResponse>> com.warehouse.allocation.controller.AllocationController.autoAllocateStock(com.warehouse.allocation.dto.AllocationRequest)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:162)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:134)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:218)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:171)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-05-03 08:19:19 [http-nio-8080-exec-10] INFO  c.w.a.c.AllocationController - Auto-allocating stock: productId=1, quantity=40
+2026-05-03 08:19:19 [http-nio-8080-exec-10] INFO  c.w.a.service.AllocationService - Auto-selecting warehouse for product 1 with quantity 40
+2026-05-03 08:19:19 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:19:19 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        wi 
+    FROM
+        WarehouseInventory wi 
+    WHERE
+        wi.product.id = :productId 
+        AND wi.availableQuantity >= :quantity 
+        AND wi.warehouse.status = 'ACTIVE' 
+    ORDER BY
+        wi.availableQuantity DESC,
+        wi.availableQuantity asc */ select
+            wi1_0.id,
+            wi1_0.available_quantity,
+            wi1_0.created_at,
+            wi1_0.product_id,
+            wi1_0.updated_at,
+            wi1_0.version,
+            wi1_0.warehouse_id 
+        from
+            warehouse_inventory wi1_0 
+        join
+            warehouse w1_0 
+                on w1_0.id=wi1_0.warehouse_id 
+        where
+            wi1_0.product_id=? 
+            and wi1_0.available_quantity>=? 
+            and w1_0.status='ACTIVE' 
+        order by
+            wi1_0.available_quantity desc,
+            wi1_0.available_quantity 
+        limit
+            ?, ?
+2026-05-03 08:19:19 [http-nio-8080-exec-10] INFO  c.w.a.service.AllocationService - Allocating 40 units of product 1 from warehouse 3
+2026-05-03 08:19:19 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:19:19 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        wi1_0.id,
+        wi1_0.available_quantity,
+        wi1_0.created_at,
+        wi1_0.product_id,
+        wi1_0.updated_at,
+        wi1_0.version,
+        wi1_0.warehouse_id 
+    from
+        warehouse_inventory wi1_0 
+    where
+        wi1_0.warehouse_id=? 
+        and wi1_0.product_id=?
+2026-05-03 08:19:19 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.warehouse.allocation.entity.Allocation */insert 
+    into
+        allocation (allocated_at, completed_at, confirmed_at, created_at, notes, product_id, quantity, reference_id, status, updated_at, warehouse_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-03 08:19:19 [http-nio-8080-exec-10] INFO  c.w.a.service.AllocationService - Allocation successful with reference ID: ALLOC-1777776559858-164c87f3
+2026-05-03 08:19:19 [http-nio-8080-exec-10] WARN  c.w.allocation.service.AuditService - Could not serialize newValues: No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: com.warehouse.allocation.entity.Allocation["warehouse"]->com.warehouse.allocation.entity.Warehouse$HibernateProxy$cYwSuoZC["hibernateLazyInitializer"])
+2026-05-03 08:19:19 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.warehouse.allocation.entity.AuditLog */insert 
+    into
+        audit_log (action, created_at, description, entity_id, entity_type, ip_address, new_values, old_values, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-03 08:19:19 [http-nio-8080-exec-10] DEBUG c.w.allocation.service.AuditService - Audit log created for entity Allocation with action ALLOCATE
+2026-05-03 08:19:19 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* update
+        for com.warehouse.allocation.entity.WarehouseInventory */update warehouse_inventory 
+    set
+        available_quantity=?,
+        product_id=?,
+        updated_at=?,
+        version=?,
+        warehouse_id=? 
+    where
+        id=? 
+        and version=?
+2026-05-03 08:19:44 [http-nio-8080-exec-9] INFO  c.w.a.c.AllocationController - Auto-allocating stock: productId=1, quantity=49
+2026-05-03 08:19:44 [http-nio-8080-exec-9] INFO  c.w.a.service.AllocationService - Auto-selecting warehouse for product 1 with quantity 49
+2026-05-03 08:19:44 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:19:44 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        wi 
+    FROM
+        WarehouseInventory wi 
+    WHERE
+        wi.product.id = :productId 
+        AND wi.availableQuantity >= :quantity 
+        AND wi.warehouse.status = 'ACTIVE' 
+    ORDER BY
+        wi.availableQuantity DESC,
+        wi.availableQuantity asc */ select
+            wi1_0.id,
+            wi1_0.available_quantity,
+            wi1_0.created_at,
+            wi1_0.product_id,
+            wi1_0.updated_at,
+            wi1_0.version,
+            wi1_0.warehouse_id 
+        from
+            warehouse_inventory wi1_0 
+        join
+            warehouse w1_0 
+                on w1_0.id=wi1_0.warehouse_id 
+        where
+            wi1_0.product_id=? 
+            and wi1_0.available_quantity>=? 
+            and w1_0.status='ACTIVE' 
+        order by
+            wi1_0.available_quantity desc,
+            wi1_0.available_quantity 
+        limit
+            ?, ?
+2026-05-03 08:19:44 [http-nio-8080-exec-9] INFO  c.w.a.service.AllocationService - Allocating 49 units of product 1 from warehouse 4
+2026-05-03 08:19:44 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:19:44 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        wi1_0.id,
+        wi1_0.available_quantity,
+        wi1_0.created_at,
+        wi1_0.product_id,
+        wi1_0.updated_at,
+        wi1_0.version,
+        wi1_0.warehouse_id 
+    from
+        warehouse_inventory wi1_0 
+    where
+        wi1_0.warehouse_id=? 
+        and wi1_0.product_id=?
+2026-05-03 08:19:44 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.warehouse.allocation.entity.Allocation */insert 
+    into
+        allocation (allocated_at, completed_at, confirmed_at, created_at, notes, product_id, quantity, reference_id, status, updated_at, warehouse_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-03 08:19:44 [http-nio-8080-exec-9] INFO  c.w.a.service.AllocationService - Allocation successful with reference ID: ALLOC-1777776584840-857ba6a7
+2026-05-03 08:19:44 [http-nio-8080-exec-9] WARN  c.w.allocation.service.AuditService - Could not serialize newValues: No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: com.warehouse.allocation.entity.Allocation["warehouse"]->com.warehouse.allocation.entity.Warehouse$HibernateProxy$cYwSuoZC["hibernateLazyInitializer"])
+2026-05-03 08:19:44 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.warehouse.allocation.entity.AuditLog */insert 
+    into
+        audit_log (action, created_at, description, entity_id, entity_type, ip_address, new_values, old_values, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-03 08:19:44 [http-nio-8080-exec-9] DEBUG c.w.allocation.service.AuditService - Audit log created for entity Allocation with action ALLOCATE
+2026-05-03 08:19:44 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    /* update
+        for com.warehouse.allocation.entity.WarehouseInventory */update warehouse_inventory 
+    set
+        available_quantity=?,
+        product_id=?,
+        updated_at=?,
+        version=?,
+        warehouse_id=? 
+    where
+        id=? 
+        and version=?
+2026-05-03 08:19:54 [http-nio-8080-exec-2] INFO  c.w.a.c.AllocationController - Auto-allocating stock: productId=2, quantity=49
+2026-05-03 08:19:54 [http-nio-8080-exec-2] INFO  c.w.a.service.AllocationService - Auto-selecting warehouse for product 2 with quantity 49
+2026-05-03 08:19:54 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:19:54 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        wi 
+    FROM
+        WarehouseInventory wi 
+    WHERE
+        wi.product.id = :productId 
+        AND wi.availableQuantity >= :quantity 
+        AND wi.warehouse.status = 'ACTIVE' 
+    ORDER BY
+        wi.availableQuantity DESC,
+        wi.availableQuantity asc */ select
+            wi1_0.id,
+            wi1_0.available_quantity,
+            wi1_0.created_at,
+            wi1_0.product_id,
+            wi1_0.updated_at,
+            wi1_0.version,
+            wi1_0.warehouse_id 
+        from
+            warehouse_inventory wi1_0 
+        join
+            warehouse w1_0 
+                on w1_0.id=wi1_0.warehouse_id 
+        where
+            wi1_0.product_id=? 
+            and wi1_0.available_quantity>=? 
+            and w1_0.status='ACTIVE' 
+        order by
+            wi1_0.available_quantity desc,
+            wi1_0.available_quantity 
+        limit
+            ?, ?
+2026-05-03 08:19:54 [http-nio-8080-exec-2] INFO  c.w.a.service.AllocationService - Allocating 49 units of product 2 from warehouse 3
+2026-05-03 08:19:54 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:19:54 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        wi1_0.id,
+        wi1_0.available_quantity,
+        wi1_0.created_at,
+        wi1_0.product_id,
+        wi1_0.updated_at,
+        wi1_0.version,
+        wi1_0.warehouse_id 
+    from
+        warehouse_inventory wi1_0 
+    where
+        wi1_0.warehouse_id=? 
+        and wi1_0.product_id=?
+2026-05-03 08:19:54 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.warehouse.allocation.entity.Allocation */insert 
+    into
+        allocation (allocated_at, completed_at, confirmed_at, created_at, notes, product_id, quantity, reference_id, status, updated_at, warehouse_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-03 08:19:54 [http-nio-8080-exec-2] INFO  c.w.a.service.AllocationService - Allocation successful with reference ID: ALLOC-1777776594632-e4a03127
+2026-05-03 08:19:54 [http-nio-8080-exec-2] WARN  c.w.allocation.service.AuditService - Could not serialize newValues: No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: com.warehouse.allocation.entity.Allocation["warehouse"]->com.warehouse.allocation.entity.Warehouse$HibernateProxy$cYwSuoZC["hibernateLazyInitializer"])
+2026-05-03 08:19:54 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* insert for
+        com.warehouse.allocation.entity.AuditLog */insert 
+    into
+        audit_log (action, created_at, description, entity_id, entity_type, ip_address, new_values, old_values, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-05-03 08:19:54 [http-nio-8080-exec-2] DEBUG c.w.allocation.service.AuditService - Audit log created for entity Allocation with action ALLOCATE
+2026-05-03 08:19:54 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* update
+        for com.warehouse.allocation.entity.WarehouseInventory */update warehouse_inventory 
+    set
+        available_quantity=?,
+        product_id=?,
+        updated_at=?,
+        version=?,
+        warehouse_id=? 
+    where
+        id=? 
+        and version=?
+2026-05-03 08:21:00 [http-nio-8080-exec-4] INFO  c.w.a.c.AllocationController - Fetching allocation with ID: 3
+2026-05-03 08:21:00 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.allocated_at,
+        a1_0.completed_at,
+        a1_0.confirmed_at,
+        a1_0.created_at,
+        a1_0.notes,
+        a1_0.product_id,
+        a1_0.quantity,
+        a1_0.reference_id,
+        a1_0.status,
+        a1_0.updated_at,
+        a1_0.warehouse_id 
+    from
+        allocation a1_0 
+    where
+        a1_0.id=?
+2026-05-03 08:21:00 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:21:00 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:22:07 [http-nio-8080-exec-7] INFO  c.w.a.c.AllocationController - Searching allocations with filters: productId=3, warehouseId=null, status=CONFIRMED
+2026-05-03 08:22:07 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        a 
+    FROM
+        Allocation a 
+    WHERE
+        (
+            :productId IS NULL 
+            OR a.product.id = :productId
+        ) 
+        AND (
+            :warehouseId IS NULL 
+            OR a.warehouse.id = :warehouseId
+        ) 
+        AND (
+            :status IS NULL 
+            OR a.status = :status
+        ) 
+        AND (
+            :startDate IS NULL 
+            OR a.allocatedAt >= :startDate
+        ) 
+        AND (
+            :endDate IS NULL 
+            OR a.allocatedAt <= :endDate
+        ) 
+    ORDER BY
+        a.allocatedAt DESC,
+        a.allocatedAt desc */ select
+            a1_0.id,
+            a1_0.allocated_at,
+            a1_0.completed_at,
+            a1_0.confirmed_at,
+            a1_0.created_at,
+            a1_0.notes,
+            a1_0.product_id,
+            a1_0.quantity,
+            a1_0.reference_id,
+            a1_0.status,
+            a1_0.updated_at,
+            a1_0.warehouse_id 
+        from
+            allocation a1_0 
+        where
+            (
+                ? is null 
+                or a1_0.product_id=?
+            ) 
+            and (
+                ? is null 
+                or a1_0.warehouse_id=?
+            ) 
+            and (
+                ? is null 
+                or a1_0.status=?
+            ) 
+            and (
+                ? is null 
+                or a1_0.allocated_at>=?
+            ) 
+            and (
+                ? is null 
+                or a1_0.allocated_at<=?
+            ) 
+        order by
+            a1_0.allocated_at desc,
+            a1_0.allocated_at desc 
+        limit
+            ?, ?
+2026-05-03 08:22:24 [http-nio-8080-exec-8] INFO  c.w.a.c.AllocationController - Searching allocations with filters: productId=1, warehouseId=null, status=CONFIRMED
+2026-05-03 08:22:24 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    /* SELECT
+        a 
+    FROM
+        Allocation a 
+    WHERE
+        (
+            :productId IS NULL 
+            OR a.product.id = :productId
+        ) 
+        AND (
+            :warehouseId IS NULL 
+            OR a.warehouse.id = :warehouseId
+        ) 
+        AND (
+            :status IS NULL 
+            OR a.status = :status
+        ) 
+        AND (
+            :startDate IS NULL 
+            OR a.allocatedAt >= :startDate
+        ) 
+        AND (
+            :endDate IS NULL 
+            OR a.allocatedAt <= :endDate
+        ) 
+    ORDER BY
+        a.allocatedAt DESC,
+        a.allocatedAt desc */ select
+            a1_0.id,
+            a1_0.allocated_at,
+            a1_0.completed_at,
+            a1_0.confirmed_at,
+            a1_0.created_at,
+            a1_0.notes,
+            a1_0.product_id,
+            a1_0.quantity,
+            a1_0.reference_id,
+            a1_0.status,
+            a1_0.updated_at,
+            a1_0.warehouse_id 
+        from
+            allocation a1_0 
+        where
+            (
+                ? is null 
+                or a1_0.product_id=?
+            ) 
+            and (
+                ? is null 
+                or a1_0.warehouse_id=?
+            ) 
+            and (
+                ? is null 
+                or a1_0.status=?
+            ) 
+            and (
+                ? is null 
+                or a1_0.allocated_at>=?
+            ) 
+            and (
+                ? is null 
+                or a1_0.allocated_at<=?
+            ) 
+        order by
+            a1_0.allocated_at desc,
+            a1_0.allocated_at desc 
+        limit
+            ?, ?
+2026-05-03 08:22:24 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:22:24 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:22:24 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:22:24 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:22:24 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:25:17 [http-nio-8080-exec-2] INFO  c.w.a.c.AllocationController - Fetching allocations for product: 1
+2026-05-03 08:25:17 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        a1_0.id,
+        a1_0.allocated_at,
+        a1_0.completed_at,
+        a1_0.confirmed_at,
+        a1_0.created_at,
+        a1_0.notes,
+        a1_0.product_id,
+        a1_0.quantity,
+        a1_0.reference_id,
+        a1_0.status,
+        a1_0.updated_at,
+        a1_0.warehouse_id 
+    from
+        allocation a1_0 
+    where
+        a1_0.product_id=? 
+    order by
+        a1_0.allocated_at desc
+2026-05-03 08:25:17 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:25:17 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:25:17 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:25:17 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:25:17 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:26:13 [http-nio-8080-exec-1] INFO  c.w.a.c.AllocationController - Fetching allocations for warehouse: 2
+2026-05-03 08:26:13 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        a1_0.id,
+        a1_0.allocated_at,
+        a1_0.completed_at,
+        a1_0.confirmed_at,
+        a1_0.created_at,
+        a1_0.notes,
+        a1_0.product_id,
+        a1_0.quantity,
+        a1_0.reference_id,
+        a1_0.status,
+        a1_0.updated_at,
+        a1_0.warehouse_id 
+    from
+        allocation a1_0 
+    where
+        a1_0.warehouse_id=? 
+    order by
+        a1_0.allocated_at desc
+2026-05-03 08:26:13 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:26:13 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:27:10 [http-nio-8080-exec-3] INFO  c.w.a.c.AllocationController - Rolling back allocation with ID: 3
+2026-05-03 08:27:10 [http-nio-8080-exec-3] INFO  c.w.a.service.AllocationService - Rolling back allocation with ID: 3
+2026-05-03 08:27:10 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.allocated_at,
+        a1_0.completed_at,
+        a1_0.confirmed_at,
+        a1_0.created_at,
+        a1_0.notes,
+        a1_0.product_id,
+        a1_0.quantity,
+        a1_0.reference_id,
+        a1_0.status,
+        a1_0.updated_at,
+        a1_0.warehouse_id 
+    from
+        allocation a1_0 
+    where
+        a1_0.id=?
+2026-05-03 08:27:10 [http-nio-8080-exec-3] ERROR c.w.a.c.GlobalExceptionHandler - Allocation exception occurred: Cannot rollback allocation. Current status: CONFIRMED
+com.warehouse.allocation.exception.AllocationException$InvalidStateException: Cannot rollback allocation. Current status: CONFIRMED
+	at com.warehouse.allocation.service.AllocationService.rollbackAllocation(AllocationService.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.warehouse.allocation.service.AllocationService$$SpringCGLIB$$0.rollbackAllocation(<generated>)
+	at com.warehouse.allocation.controller.AllocationController.rollbackAllocation(AllocationController.java:175)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.warehouse.allocation.controller.AllocationController$$SpringCGLIB$$0.rollbackAllocation(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:888)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-05-03 08:27:26 [http-nio-8080-exec-4] INFO  c.w.a.c.AllocationController - Rolling back allocation with ID: 1
+2026-05-03 08:27:26 [http-nio-8080-exec-4] INFO  c.w.a.service.AllocationService - Rolling back allocation with ID: 1
+2026-05-03 08:27:26 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.allocated_at,
+        a1_0.completed_at,
+        a1_0.confirmed_at,
+        a1_0.created_at,
+        a1_0.notes,
+        a1_0.product_id,
+        a1_0.quantity,
+        a1_0.reference_id,
+        a1_0.status,
+        a1_0.updated_at,
+        a1_0.warehouse_id 
+    from
+        allocation a1_0 
+    where
+        a1_0.id=?
+2026-05-03 08:27:26 [http-nio-8080-exec-4] ERROR c.w.a.c.GlobalExceptionHandler - Allocation exception occurred: Cannot rollback allocation. Current status: CONFIRMED
+com.warehouse.allocation.exception.AllocationException$InvalidStateException: Cannot rollback allocation. Current status: CONFIRMED
+	at com.warehouse.allocation.service.AllocationService.rollbackAllocation(AllocationService.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.warehouse.allocation.service.AllocationService$$SpringCGLIB$$0.rollbackAllocation(<generated>)
+	at com.warehouse.allocation.controller.AllocationController.rollbackAllocation(AllocationController.java:175)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.warehouse.allocation.controller.AllocationController$$SpringCGLIB$$0.rollbackAllocation(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:888)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-05-03 08:28:20 [http-nio-8080-exec-6] INFO  c.w.a.c.AllocationController - Confirming allocation with ID: 3
+2026-05-03 08:28:20 [http-nio-8080-exec-6] INFO  c.w.a.service.AllocationService - Confirming allocation with ID: 3
+2026-05-03 08:28:20 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.allocated_at,
+        a1_0.completed_at,
+        a1_0.confirmed_at,
+        a1_0.created_at,
+        a1_0.notes,
+        a1_0.product_id,
+        a1_0.quantity,
+        a1_0.reference_id,
+        a1_0.status,
+        a1_0.updated_at,
+        a1_0.warehouse_id 
+    from
+        allocation a1_0 
+    where
+        a1_0.id=?
+2026-05-03 08:28:20 [http-nio-8080-exec-6] ERROR c.w.a.c.GlobalExceptionHandler - Allocation exception occurred: Allocation is not in PENDING state. Current status: CONFIRMED
+com.warehouse.allocation.exception.AllocationException$InvalidStateException: Allocation is not in PENDING state. Current status: CONFIRMED
+	at com.warehouse.allocation.service.AllocationService.confirmAllocation(AllocationService.java:176)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.warehouse.allocation.service.AllocationService$$SpringCGLIB$$0.confirmAllocation(<generated>)
+	at com.warehouse.allocation.controller.AllocationController.confirmAllocation(AllocationController.java:161)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.warehouse.allocation.controller.AllocationController$$SpringCGLIB$$0.confirmAllocation(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:888)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-05-03 08:28:30 [http-nio-8080-exec-5] INFO  c.w.a.c.AllocationController - Confirming allocation with ID: 1
+2026-05-03 08:28:30 [http-nio-8080-exec-5] INFO  c.w.a.service.AllocationService - Confirming allocation with ID: 1
+2026-05-03 08:28:30 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.allocated_at,
+        a1_0.completed_at,
+        a1_0.confirmed_at,
+        a1_0.created_at,
+        a1_0.notes,
+        a1_0.product_id,
+        a1_0.quantity,
+        a1_0.reference_id,
+        a1_0.status,
+        a1_0.updated_at,
+        a1_0.warehouse_id 
+    from
+        allocation a1_0 
+    where
+        a1_0.id=?
+2026-05-03 08:28:30 [http-nio-8080-exec-5] ERROR c.w.a.c.GlobalExceptionHandler - Allocation exception occurred: Allocation is not in PENDING state. Current status: CONFIRMED
+com.warehouse.allocation.exception.AllocationException$InvalidStateException: Allocation is not in PENDING state. Current status: CONFIRMED
+	at com.warehouse.allocation.service.AllocationService.confirmAllocation(AllocationService.java:176)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.warehouse.allocation.service.AllocationService$$SpringCGLIB$$0.confirmAllocation(<generated>)
+	at com.warehouse.allocation.controller.AllocationController.confirmAllocation(AllocationController.java:161)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.warehouse.allocation.controller.AllocationController$$SpringCGLIB$$0.confirmAllocation(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:888)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-05-03 08:30:23 [http-nio-8080-exec-10] INFO  c.w.a.c.AllocationController - Allocating stock: productId=1, quantity=500, warehouseId=1
+2026-05-03 08:30:23 [http-nio-8080-exec-10] INFO  c.w.a.service.AllocationService - Allocating 500 units of product 1 from warehouse 1
+2026-05-03 08:30:23 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.name,
+        p1_0.sku,
+        p1_0.total_stock,
+        p1_0.updated_at 
+    from
+        product p1_0 
+    where
+        p1_0.id=?
+2026-05-03 08:30:23 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        w1_0.id,
+        w1_0.capacity,
+        w1_0.created_at,
+        w1_0.is_deleted,
+        w1_0.location,
+        w1_0.name,
+        w1_0.status,
+        w1_0.updated_at 
+    from
+        warehouse w1_0 
+    where
+        w1_0.id=?
+2026-05-03 08:30:23 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        wi1_0.id,
+        wi1_0.available_quantity,
+        wi1_0.created_at,
+        wi1_0.product_id,
+        wi1_0.updated_at,
+        wi1_0.version,
+        wi1_0.warehouse_id 
+    from
+        warehouse_inventory wi1_0 
+    where
+        wi1_0.warehouse_id=? 
+        and wi1_0.product_id=?
+2026-05-03 08:30:23 [http-nio-8080-exec-10] WARN  c.w.a.service.AllocationService - Insufficient stock: Available=0, Requested=500
+2026-05-03 08:30:23 [http-nio-8080-exec-10] ERROR c.w.a.c.GlobalExceptionHandler - Allocation exception occurred: Insufficient stock. Available: 0, Requested: 500
+com.warehouse.allocation.exception.AllocationException$InsufficientStockException: Insufficient stock. Available: 0, Requested: 500
+	at com.warehouse.allocation.service.AllocationService.allocateFromWarehouse(AllocationService.java:90)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.warehouse.allocation.service.AllocationService$$SpringCGLIB$$0.allocateFromWarehouse(<generated>)
+	at com.warehouse.allocation.controller.AllocationController.allocateStock(AllocationController.java:50)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.warehouse.allocation.controller.AllocationController$$SpringCGLIB$$0.allocateStock(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)

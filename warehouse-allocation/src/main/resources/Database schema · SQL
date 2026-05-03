@@ -1,0 +1,187 @@
+CREATE DATABASE warehouse_allocation_db;
+USE warehouse_allocation_db;
+
+-- Table: Warehouse
+CREATE TABLE warehouse (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE,
+    location VARCHAR(255) NOT NULL,
+    capacity BIGINT NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE' COMMENT 'ACTIVE or INACTIVE (soft delete)',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted BOOLEAN DEFAULT FALSE,
+    INDEX idx_name (name),
+    INDEX idx_status (status),
+    INDEX idx_created_at (created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Table: Product
+CREATE TABLE product (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE,
+    sku VARCHAR(100) NOT NULL UNIQUE,
+    total_stock BIGINT NOT NULL DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_sku (sku),
+    INDEX idx_name (name)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Table: Warehouse_Inventory
+-- Tracks available quantity of each product in each warehouse
+-- Uses optimistic locking with version field for concurrency control
+CREATE TABLE warehouse_inventory (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    warehouse_id BIGINT NOT NULL,
+    product_id BIGINT NOT NULL,
+    available_quantity BIGINT NOT NULL DEFAULT 0,
+    version BIGINT DEFAULT 0 COMMENT 'Optimistic locking version',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY unique_warehouse_product (warehouse_id, product_id),
+    FOREIGN KEY (warehouse_id) REFERENCES warehouse(id) ON DELETE RESTRICT,
+    FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE RESTRICT,
+    INDEX idx_warehouse_id (warehouse_id),
+    INDEX idx_product_id (product_id),
+    INDEX idx_available_quantity (available_quantity)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Table: Allocation
+-- Tracks all allocation requests and their status
+CREATE TABLE allocation (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    product_id BIGINT NOT NULL,
+    warehouse_id BIGINT NOT NULL,
+    quantity BIGINT NOT NULL,
+    status VARCHAR(50) NOT NULL DEFAULT 'PENDING' COMMENT 'PENDING, CONFIRMED, COMPLETED, ROLLED_BACK',
+    allocated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    confirmed_at TIMESTAMP NULL,
+    completed_at TIMESTAMP NULL,
+    reference_id VARCHAR(100) UNIQUE,
+    notes VARCHAR(500),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE RESTRICT,
+    FOREIGN KEY (warehouse_id) REFERENCES warehouse(id) ON DELETE RESTRICT,
+    INDEX idx_product_id (product_id),
+    INDEX idx_warehouse_id (warehouse_id),
+    INDEX idx_status (status),
+    INDEX idx_allocated_at (allocated_at),
+    INDEX idx_created_at (created_at),
+    INDEX idx_reference_id (reference_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Table: Stock_Transfer
+-- Tracks transfers of stock between warehouses
+CREATE TABLE stock_transfer (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    source_warehouse_id BIGINT NOT NULL,
+    target_warehouse_id BIGINT NOT NULL,
+    product_id BIGINT NOT NULL,
+    quantity BIGINT NOT NULL,
+    status VARCHAR(50) NOT NULL DEFAULT 'PENDING' COMMENT 'PENDING, IN_TRANSIT, COMPLETED, CANCELLED',
+    transfer_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    completed_date TIMESTAMP NULL,
+    reference_id VARCHAR(100) UNIQUE,
+    notes VARCHAR(500),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (source_warehouse_id) REFERENCES warehouse(id) ON DELETE RESTRICT,
+    FOREIGN KEY (target_warehouse_id) REFERENCES warehouse(id) ON DELETE RESTRICT,
+    FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE RESTRICT,
+    INDEX idx_source_warehouse_id (source_warehouse_id),
+    INDEX idx_target_warehouse_id (target_warehouse_id),
+    INDEX idx_product_id (product_id),
+    INDEX idx_status (status),
+    INDEX idx_transfer_date (transfer_date),
+    INDEX idx_created_at (created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Table: Audit_Log
+-- Comprehensive audit trail for compliance and tracking
+CREATE TABLE audit_log (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    entity_type VARCHAR(100) NOT NULL,
+    entity_id BIGINT NOT NULL,
+    action VARCHAR(50) NOT NULL COMMENT 'CREATE, UPDATE, DELETE, ALLOCATE, TRANSFER',
+    user_id VARCHAR(100),
+    old_values JSON,
+    new_values JSON,
+    description TEXT,
+    ip_address VARCHAR(45),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_entity_type (entity_type),
+    INDEX idx_entity_id (entity_id),
+    INDEX idx_action (action),
+    INDEX idx_created_at (created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Stored Procedure: Check Warehouse Capacity
+DELIMITER //
+CREATE PROCEDURE sp_check_warehouse_capacity(
+    IN p_warehouse_id BIGINT,
+    IN p_product_id BIGINT,
+    IN p_requested_quantity BIGINT,
+    OUT p_can_allocate BOOLEAN,
+    OUT p_available_quantity BIGINT,
+    OUT p_warehouse_capacity BIGINT
+)
+BEGIN
+    DECLARE v_used_capacity BIGINT DEFAULT 0;
+    
+    SELECT w.capacity, COALESCE(SUM(wi.available_quantity), 0)
+    INTO p_warehouse_capacity, v_used_capacity
+    FROM warehouse w
+    LEFT JOIN warehouse_inventory wi ON w.id = wi.warehouse_id
+    WHERE w.id = p_warehouse_id
+    GROUP BY w.id;
+    
+    SELECT available_quantity
+    INTO p_available_quantity
+    FROM warehouse_inventory
+    WHERE warehouse_id = p_warehouse_id AND product_id = p_product_id;
+    
+    IF p_available_quantity IS NULL THEN
+        SET p_available_quantity = 0;
+    END IF;
+    
+    IF p_available_quantity >= p_requested_quantity THEN
+        SET p_can_allocate = TRUE;
+    ELSE
+        SET p_can_allocate = FALSE;
+    END IF;
+END //
+DELIMITER ;
+
+-- Sample Data Insertion (Optional)
+INSERT INTO warehouse (name, location, capacity, status) VALUES
+('Main Warehouse', 'Chennai', 100000, 'ACTIVE'),
+('East Coast Hub', 'Hyderabad', 75000, 'ACTIVE'),
+('West Coast Hub', 'Bangalore', 80000, 'ACTIVE'),
+('Central Warehouse', 'Coimbatore', 90000, 'ACTIVE');
+
+INSERT INTO product (name, sku, total_stock) VALUES
+('Laptop', 'LAPTOP-001', 500),
+('Mouse', 'MOUSE-001', 2000),
+('Keyboard', 'KEYBOARD-001', 1500),
+('Monitor', 'MONITOR-001', 300);
+
+-- Initialize warehouse inventory
+INSERT INTO warehouse_inventory (warehouse_id, product_id, available_quantity, version) VALUES
+(1, 1, 150, 0), -- Laptop in Main Warehouse
+(1, 2, 500, 0),
+(1, 3, 400, 0),
+(1, 4, 100, 0),
+(2, 1, 120, 0), -- Laptop in East Coast Hub
+(2, 2, 400, 0),
+(2, 3, 350, 0),
+(2, 4, 80, 0),
+(3, 1, 130, 0), -- Laptop in West Coast Hub
+(3, 2, 600, 0),
+(3, 3, 400, 0),
+(3, 4, 90, 0),
+(4, 1, 100, 0), -- Laptop in Central Warehouse
+(4, 2, 500, 0),
+(4, 3, 350, 0),
+(4, 4, 30, 0);

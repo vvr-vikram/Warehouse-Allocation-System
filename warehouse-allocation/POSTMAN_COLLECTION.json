@@ -1,0 +1,1087 @@
+{
+  "info": {
+    "name": "Warehouse Allocation System - India",
+    "description": "Complete API collection for Warehouse Allocation System with Indian warehouse data (Chennai, Hyderabad, Bangalore, Coimbatore)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/api/v1",
+      "type": "string"
+    },
+    {
+      "key": "warehouseId",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "productId",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "allocationId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "transferId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "inventoryId",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "🏢 Warehouse Management",
+      "description": "CRUD operations for warehouses in Indian locations",
+      "item": [
+        {
+          "name": "1. Create Warehouse - Chennai",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "pm.test(\"Response has warehouse data\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.success).to.be.true;",
+                  "    pm.expect(jsonData.data.name).to.include(\"Chennai\");",
+                  "    pm.collectionVariables.set(\"warehouseId\", jsonData.data.id);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Main Warehouse - Chennai\",\n    \"location\": \"Chennai, Tamil Nadu\",\n    \"capacity\": 100000\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/warehouses",
+              "host": ["{{baseUrl}}"],
+              "path": ["warehouses"]
+            }
+          }
+        },
+        {
+          "name": "2. Create Warehouse - Hyderabad",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"East Coast Hub - Hyderabad\",\n    \"location\": \"Hyderabad, Telangana\",\n    \"capacity\": 75000\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/warehouses",
+              "host": ["{{baseUrl}}"],
+              "path": ["warehouses"]
+            }
+          }
+        },
+        {
+          "name": "3. Create Warehouse - Bangalore",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"West Coast Hub - Bangalore\",\n    \"location\": \"Bangalore, Karnataka\",\n    \"capacity\": 80000\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/warehouses",
+              "host": ["{{baseUrl}}"],
+              "path": ["warehouses"]
+            }
+          }
+        },
+        {
+          "name": "4. Create Warehouse - Coimbatore",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Central Warehouse - Coimbatore\",\n    \"location\": \"Coimbatore, Tamil Nadu\",\n    \"capacity\": 90000\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/warehouses",
+              "host": ["{{baseUrl}}"],
+              "path": ["warehouses"]
+            }
+          }
+        },
+        {
+          "name": "5. Get All Warehouses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/warehouses",
+              "host": ["{{baseUrl}}"],
+              "path": ["warehouses"]
+            }
+          }
+        },
+        {
+          "name": "6. Get Warehouse by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/warehouses/{{warehouseId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["warehouses", "{{warehouseId}}"]
+            }
+          }
+        },
+        {
+          "name": "7. Get Warehouses with Pagination",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/warehouses/paginated?page=0&size=10&sortBy=createdAt&direction=DESC",
+              "host": ["{{baseUrl}}"],
+              "path": ["warehouses", "paginated"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "createdAt"
+                },
+                {
+                  "key": "direction",
+                  "value": "DESC"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "8. Update Warehouse",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Main Warehouse - Chennai (Expanded)\",\n    \"location\": \"Chennai, Tamil Nadu - Ambattur\",\n    \"capacity\": 150000\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/warehouses/{{warehouseId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["warehouses", "{{warehouseId}}"]
+            }
+          }
+        },
+        {
+          "name": "9. Activate Warehouse",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/warehouses/{{warehouseId}}/activate",
+              "host": ["{{baseUrl}}"],
+              "path": ["warehouses", "{{warehouseId}}", "activate"]
+            }
+          }
+        },
+        {
+          "name": "10. Deactivate Warehouse",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/warehouses/{{warehouseId}}/deactivate",
+              "host": ["{{baseUrl}}"],
+              "path": ["warehouses", "{{warehouseId}}", "deactivate"]
+            }
+          }
+        },
+        {
+          "name": "11. Soft Delete Warehouse",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/warehouses/{{warehouseId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["warehouses", "{{warehouseId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "📦 Product Management",
+      "description": "CRUD operations for products",
+      "item": [
+        {
+          "name": "1. Create Product - Laptop",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "var jsonData = pm.response.json();",
+                  "pm.collectionVariables.set(\"productId\", jsonData.data.id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Laptop\",\n    \"sku\": \"LAPTOP-001\",\n    \"totalStock\": 500\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": ["{{baseUrl}}"],
+              "path": ["products"]
+            }
+          }
+        },
+        {
+          "name": "2. Create Product - Mouse",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Mouse\",\n    \"sku\": \"MOUSE-001\",\n    \"totalStock\": 2000\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": ["{{baseUrl}}"],
+              "path": ["products"]
+            }
+          }
+        },
+        {
+          "name": "3. Create Product - Keyboard",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Keyboard\",\n    \"sku\": \"KEYBOARD-001\",\n    \"totalStock\": 1500\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": ["{{baseUrl}}"],
+              "path": ["products"]
+            }
+          }
+        },
+        {
+          "name": "4. Create Product - Monitor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Monitor\",\n    \"sku\": \"MONITOR-001\",\n    \"totalStock\": 300\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": ["{{baseUrl}}"],
+              "path": ["products"]
+            }
+          }
+        },
+        {
+          "name": "5. Get Product by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products/{{productId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "{{productId}}"]
+            }
+          }
+        },
+        {
+          "name": "6. Get Product by SKU",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products/sku/LAPTOP-001",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "sku", "LAPTOP-001"]
+            }
+          }
+        },
+        {
+          "name": "7. Get All Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": ["{{baseUrl}}"],
+              "path": ["products"]
+            }
+          }
+        },
+        {
+          "name": "8. Search Products by Name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products/search/Laptop",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "search", "Laptop"]
+            }
+          }
+        },
+        {
+          "name": "9. Update Product",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Gaming Laptop Pro\",\n    \"sku\": \"LAPTOP-001\",\n    \"totalStock\": 600\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products/{{productId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "{{productId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "📊 Inventory Management",
+      "description": "Manage warehouse inventory with optimistic locking",
+      "item": [
+        {
+          "name": "1. Initialize Inventory - Chennai Warehouse",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/inventory/1/1?quantity=150",
+              "host": ["{{baseUrl}}"],
+              "path": ["inventory", "1", "1"],
+              "query": [
+                {
+                  "key": "quantity",
+                  "value": "150"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "2. Initialize Inventory - Hyderabad Warehouse",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/inventory/2/1?quantity=120",
+              "host": ["{{baseUrl}}"],
+              "path": ["inventory", "2", "1"],
+              "query": [
+                {
+                  "key": "quantity",
+                  "value": "120"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "3. Initialize Inventory - Bangalore Warehouse",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/inventory/3/1?quantity=130",
+              "host": ["{{baseUrl}}"],
+              "path": ["inventory", "3", "1"],
+              "query": [
+                {
+                  "key": "quantity",
+                  "value": "130"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "4. Initialize Inventory - Coimbatore Warehouse",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/inventory/4/1?quantity=100",
+              "host": ["{{baseUrl}}"],
+              "path": ["inventory", "4", "1"],
+              "query": [
+                {
+                  "key": "quantity",
+                  "value": "100"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "5. Initialize Mouse Inventory - All Warehouses",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/inventory/1/2?quantity=500",
+              "host": ["{{baseUrl}}"],
+              "path": ["inventory", "1", "2"],
+              "query": [
+                {
+                  "key": "quantity",
+                  "value": "500"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "6. Get Specific Inventory",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/inventory/{{warehouseId}}/{{productId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["inventory", "{{warehouseId}}", "{{productId}}"]
+            }
+          }
+        },
+        {
+          "name": "7. Get Warehouse Inventory (Chennai)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/inventory/warehouse/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["inventory", "warehouse", "1"]
+            }
+          }
+        },
+        {
+          "name": "8. Get Product Inventory Across All Warehouses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/inventory/product/{{productId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["inventory", "product", "{{productId}}"]
+            }
+          }
+        },
+        {
+          "name": "9. Get Total Stock for Laptop",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/inventory/product/{{productId}}/total",
+              "host": ["{{baseUrl}}"],
+              "path": ["inventory", "product", "{{productId}}", "total"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🎯 Stock Allocation",
+      "description": "Allocate stock from warehouses",
+      "item": [
+        {
+          "name": "1. Allocate from Specific Warehouse (Chennai)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "var jsonData = pm.response.json();",
+                  "pm.collectionVariables.set(\"allocationId\", jsonData.data.id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"productId\": {{productId}},\n    \"warehouseId\": 1,\n    \"quantity\": 50,\n    \"notes\": \"Customer order #ORD-CHENNAI-001 - Amazon India\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/allocations",
+              "host": ["{{baseUrl}}"],
+              "path": ["allocations"]
+            }
+          }
+        },
+        {
+          "name": "2. Allocate from Hyderabad Warehouse",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"productId\": {{productId}},\n    \"warehouseId\": 2,\n    \"quantity\": 30,\n    \"notes\": \"Customer order #ORD-HYD-001 - Flipkart\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/allocations",
+              "host": ["{{baseUrl}}"],
+              "path": ["allocations"]
+            }
+          }
+        },
+        {
+          "name": "3. Auto-Allocate Stock (Best Warehouse Selection)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"productId\": {{productId}},\n    \"quantity\": 40,\n    \"notes\": \"Auto-allocated for urgent order - Diwali Sale\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/allocations/auto-allocate",
+              "host": ["{{baseUrl}}"],
+              "path": ["allocations", "auto-allocate"]
+            }
+          }
+        },
+        {
+          "name": "4. Get Allocation by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/allocations/{{allocationId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["allocations", "{{allocationId}}"]
+            }
+          }
+        },
+        {
+          "name": "5. Search Allocations by Product",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/allocations/search?productId={{productId}}&status=CONFIRMED&page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["allocations", "search"],
+              "query": [
+                {
+                  "key": "productId",
+                  "value": "{{productId}}"
+                },
+                {
+                  "key": "status",
+                  "value": "CONFIRMED"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "6. Search Allocations by Date Range",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/allocations/search?startDate=2026-01-01T00:00:00&endDate=2026-12-31T23:59:59&page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["allocations", "search"],
+              "query": [
+                {
+                  "key": "startDate",
+                  "value": "2026-01-01T00:00:00"
+                },
+                {
+                  "key": "endDate",
+                  "value": "2026-12-31T23:59:59"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "7. Get All Allocations for Product",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/allocations/product/{{productId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["allocations", "product", "{{productId}}"]
+            }
+          }
+        },
+        {
+          "name": "8. Get All Allocations for Chennai Warehouse",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/allocations/warehouse/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["allocations", "warehouse", "1"]
+            }
+          }
+        },
+        {
+          "name": "9. Confirm Pending Allocation",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/allocations/{{allocationId}}/confirm",
+              "host": ["{{baseUrl}}"],
+              "path": ["allocations", "{{allocationId}}", "confirm"]
+            }
+          }
+        },
+        {
+          "name": "10. Rollback Allocation (Return Stock)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/allocations/{{allocationId}}/rollback",
+              "host": ["{{baseUrl}}"],
+              "path": ["allocations", "{{allocationId}}", "rollback"]
+            }
+          }
+        },
+        {
+          "name": "11. Test Insufficient Stock Error",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"productId\": {{productId}},\n    \"warehouseId\": 4,\n    \"quantity\": 500,\n    \"notes\": \"This should fail - insufficient stock\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/allocations",
+              "host": ["{{baseUrl}}"],
+              "path": ["allocations"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🔄 Stock Transfer Between Warehouses",
+      "description": "Transfer stock between Indian warehouses",
+      "item": [
+        {
+          "name": "1. Transfer Laptops: Chennai → Hyderabad",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "var jsonData = pm.response.json();",
+                  "pm.collectionVariables.set(\"transferId\", jsonData.data.id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"sourceWarehouseId\": 1,\n    \"targetWarehouseId\": 2,\n    \"productId\": {{productId}},\n    \"quantity\": 25,\n    \"notes\": \"Rebalancing inventory - Chennai to Hyderabad\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/transfers",
+              "host": ["{{baseUrl}}"],
+              "path": ["transfers"]
+            }
+          }
+        },
+        {
+          "name": "2. Transfer Laptops: Bangalore → Coimbatore",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"sourceWarehouseId\": 3,\n    \"targetWarehouseId\": 4,\n    \"productId\": {{productId}},\n    \"quantity\": 20,\n    \"notes\": \"Stock transfer - Bangalore to Coimbatore\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/transfers",
+              "host": ["{{baseUrl}}"],
+              "path": ["transfers"]
+            }
+          }
+        },
+        {
+          "name": "3. Transfer Mice: Chennai → All Warehouses",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"sourceWarehouseId\": 1,\n    \"targetWarehouseId\": 2,\n    \"productId\": 2,\n    \"quantity\": 100,\n    \"notes\": \"Mouse stock redistribution\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/transfers",
+              "host": ["{{baseUrl}}"],
+              "path": ["transfers"]
+            }
+          }
+        },
+        {
+          "name": "4. Execute Pending Transfer (Complete)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/transfers/{{transferId}}/execute",
+              "host": ["{{baseUrl}}"],
+              "path": ["transfers", "{{transferId}}", "execute"]
+            }
+          }
+        },
+        {
+          "name": "5. Get Transfer by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/transfers/{{transferId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["transfers", "{{transferId}}"]
+            }
+          }
+        },
+        {
+          "name": "6. Search Transfers by Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/transfers/search?status=COMPLETED&page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["transfers", "search"],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "COMPLETED"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "7. Search Transfers by Source Warehouse",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/transfers/search?sourceWarehouseId=1&page=0&size=20",
+              "host": ["{{baseUrl}}"],
+              "path": ["transfers", "search"],
+              "query": [
+                {
+                  "key": "sourceWarehouseId",
+                  "value": "1"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "8. Cancel Pending Transfer",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/transfers/{{transferId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["transfers", "{{transferId}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "📝 Audit Logs",
+      "description": "Track all system operations",
+      "item": [
+        {
+          "name": "1. Get Audit Logs for Warehouse",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/audit/entity/Warehouse/1",
+              "host": ["http://localhost:8080"],
+              "path": ["api", "v1", "audit", "entity", "Warehouse", "1"]
+            }
+          }
+        },
+        {
+          "name": "2. Get Audit Logs by Action",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/audit/action/ALLOCATE",
+              "host": ["http://localhost:8080"],
+              "path": ["api", "v1", "audit", "action", "ALLOCATE"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "📈 Reports & Analytics",
+      "description": "Business intelligence queries",
+      "item": [
+        {
+          "name": "1. Get Stock Summary by Warehouse",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/reports/stock-summary",
+              "host": ["{{baseUrl}}"],
+              "path": ["reports", "stock-summary"]
+            }
+          }
+        },
+        {
+          "name": "2. Get Low Stock Alert (Less than 50 units)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/reports/low-stock?threshold=50",
+              "host": ["{{baseUrl}}"],
+              "path": ["reports", "low-stock"],
+              "query": [
+                {
+                  "key": "threshold",
+                  "value": "50"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
